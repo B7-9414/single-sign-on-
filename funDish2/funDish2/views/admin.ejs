@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <!-- here i added a small thigns using EJS-->
+    <!-- The link and script that I used (out source)-->
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="/Css/funDishes.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+
+    <!-- Mohammed -->
+    <link rel="icon" href="./img/icon.ico" type="image/gif" sizes="16x16">
+    <!------>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="/">Fun-Dishes</a>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/recipie/all">Gallery</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div style="height: 100"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 table-responsives">
+                <a href="/admin/recipie/add" class="btn-info">Add new</a>
+                <table class="table table-bordered table-hover table-condensed">
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Operations</th>
+                    </tr>
+                    <% rcps.forEach(function(dish){%>
+                    <tr>
+                        <td><%= dish["Title"] %></td>
+                        <td><%= dish["Description"] %></td>
+                        <td>
+                            <a href='/admin/recipie/edit/<%= dish["Id"]%>' class="btn-outline-success my-2 my-sm-0">Edit</a>
+                            <a href='/admin/recipie/delete/<%= dish["Id"]%>' class="btn-outline-success my-2 my-sm-0">Delete</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+     <footer class="container">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>&copy; 2017-2018 Company, Inc. &middot;
+                <a href="#">Privacy</a> &middot;
+                <a href="#">Terms</a>
+            </p>
+        </footer>
+
+</body>
+</html>
+<!--Bassam-->

@@ -1,0 +1,80 @@
+<!--Bassam: This is the first page. here, I used bootstrap and I likend pages
+    MA: http://fedora.cis.cau.edu/~bbanawi/Fun-Dishes/fun-Dishes.html   
+    -- >
+    <!-- here i added a small thigns using EJS-->
+<html lang="en">
+
+<head>
+
+    <! The link and script that I used (out source)>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="/Css/funDishes.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+
+    <! Mohammed >
+    <link rel="icon" href="/img/icon.ico" type="image/gif" sizes="16x16">
+    <!------>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="/">Fun-Dishes</a>
+
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About the project</a>
+                    </li>
+                    
+                </ul>
+                <form class="form-inline mt-2 mt-md-0" method="post" action="/recipie/filter">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" name="qry" aria-label="Search">
+                    <input type="submit" value="Search" class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div style="height:100"></div>
+    <div class="container">
+    	<div class="row">
+            <% recps.forEach(function(dish){ %>    
+                <div class="col-sm-4">
+                        <img class="rounded-circle" src="<%= dish["image"][0]%>" alt="Generic placeholder image" width="140" height="140">
+                        <h2><%= dish["Title"]%></h2>
+                        <p><%= dish["Description"]%></p>
+                        <p>
+                            <a class="btn btn-secondary" href="/recipie/details/<%= dish["Id"]%>" role="button">View details &raquo;</a>
+                        </p>
+                </div>
+             <% })%>
+        </div>
+    </div>
+
+
+    <footer class="container text-center">
+        <p >
+            <a href="/">Home</a>
+        </p>
+        <p>&copy; 2017-2018 Company, Inc. &middot;
+            <a href="#">Privacy</a> &middot;
+            <a href="#">Terms</a>
+        </p>
+   	</footer>
+
+</body>
+
+</html>
+<!Bassam>

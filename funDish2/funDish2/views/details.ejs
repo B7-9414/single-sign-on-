@@ -1,0 +1,129 @@
+<!--Bassam: I crate the resipeObject and then I call it here in the html in order to avoid hard coding-->
+<!--Also I linked the pages and create previous in the bottom of the html pages i used footer-->
+<!-- I add some of EJS as you see down>
+<!-- MA:  CSS, map, YT. Also i was responsible for the image obj -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lentil Soup</title>
+    
+    <link href="/Css/resipe.css" rel="stylesheet" type="text/css">
+    <! The link and script that I used (out source)>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="/Css/funDishes.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+
+    <! Mohammed >
+    <link rel="icon" href="/img/icon.ico" type="image/gif" sizes="16x16">
+    <!------>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="/">Fun-Dishes</a>
+
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/recipie/all">Galllery</a>
+                    </li>
+                    
+                </ul>
+                <form class="form-inline mt-2 mt-md-0" method="post" action="/recipie/filter">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" name="qry" aria-label="Search">
+                    <input type="submit" value="Search" class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div style="height:100px"></div>
+    <div class="container text-center">
+        <h1><%= dish["Title"]%></h1>
+        <div class="row ">
+            <div class="col-sm-offest-1 col-sm-5">
+                <img src =' <%=dish["image"]%>' height="300" width="400">
+            </div>
+            <div class="col-sm-6 ">
+                <iframe id="vid"  src="https://www.youtube.com/embed/tzNIScZhqR0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen height="400" width="100%" > </iframe>
+            </div>
+           
+        </div>
+        <h3>Description </h3>
+        <p><%= dish['Description']%></p><br>
+        <h4>Difficulty Level: <%=dish['LevelOfDiffculty']%></h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Ingredients</h3>
+                <ol class="text-left">
+                    <% dish['Ingredients'].forEach( function(d){ %>
+                    <li> <%= d %></li>
+                    <% });%>
+                </ol>
+
+            </div>
+            <div class="col-sm-6">
+                <h3>Nutritional Facts</h3>
+                <ul class="text-left">
+                    <% dish['NutritionalFacts'].forEach( function(d){ %>
+                    <li> <%= d %></li>
+                    <% });%>
+                </ul>
+            </div>
+
+        </div>
+        <h3>Refrences</h3>
+        <ul class="list-unstyled">
+            <% dish['Rference'].forEach( function(d){ %>
+            <li><a href='<%= d %>' > <%= d %></a></li>
+            <% });%>
+        </ul>
+        <script>
+                function initMap(){
+            var location = {lat: 41.871940, lng: 12.567380 };
+            
+            var map =new google.maps.Map(document.getElementById("map"),
+            {zoom: 4,
+          center: location});
+
+        var marker = new google.maps.Marker({
+            position: location, 
+            map: map
+
+        });}
+
+        </script>
+        <div class="row">
+            <div height="400px" width="100%"  id="map"> 
+            </div>
+        </div>
+
+    </div>
+    <footer class="container text-center">
+        <p >
+            <a href="/">Home</a>
+        </p>
+        <p>&copy; 2017-2018 Company, Inc. &middot;
+            <a href="#">Privacy</a> &middot;
+            <a href="#">Terms</a>
+        </p>
+    </footer> 
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARhMdKWiVSi
+     _a2-sWCjycLN5kCS5ZkcqQ
+     &callback=initMap"> </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+/* MA:https://www.w3schools.com/w3css/w3css_cards.asp
+Css was on me */
+*{
+  font-family: 'Merienda', cursive;
+align-content: center;
+}
+html, body {
+height: 100%;
+margin: 0;
+padding: 0;
+color: wheat;
+background-repeat: repeat;
+font-family: 'Merienda', cursive;
+
+}
+
+table{
+ text-align:center;
+ margin: 0 auto;
+}
+header{
+border-radius: 25px;
+background: rgba(230,230,250, 0.3) ;
+text-align:center
+
+}
+footer{
+bottom:0;
+background: rgba(230,230,250, 0.3) ;
+text-align:center;
+}
+
+#resipe {font-size: 30px;}
+
+#map,#vid{
+
+width: 100%;
+height: 200px;
+border-radius: 0;
+margin: auto;
+}
+tr{
+  border-radius: 25px;
+  border-collapse: separate;
+  border-spacing: 15px;
+
+}
+

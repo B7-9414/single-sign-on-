@@ -1,0 +1,57 @@
+
+// Bassam and MA 
+
+Runing the server: 
+    1) Go to any editor such as, Visual Studio , intellij or codio 
+    2) uplode the funDish folder 
+    3) open the Terminal 
+    4) typing_1 (cd funDish) 
+    5) typing_2  (nodemon app.js or node app.js)
+    6) * if you are runing this on visual Studio or intellij open google chrome and type the IP and port 
+        which is http:/127.0.0.1:3000
+
+       * if you are runing this on codio click on Box Url. but, some time the port wont work on codio so what should I do ?
+                1) go to .codio file change the Box URL from http://127.0.0.1:3000/ into http://127.0.0.1:5000/
+                    all you do is changing the port from 3000 into 5000
+                2) go to app.js file and change var port = 3000; into var port = 5000;
+                3) save everything and run it (Box url)
+
+
+============================================================================================================
+
+Router on funDish:
+
+1) loging router: /login
+2) signup router: /signup
+3) project information router: /about
+4) listing all recipies router: /recipie/all
+5) recipie's details with id router: /recipie/details/2
+6) Admin recipie router: /admin/recipie
+7) Admin delete,edit recipie router: /admin/recipie/edit/1 or delete
+8) Add recipie from Admin router: /admin/recipie/add
+
+=============================================================================================================
+Sources (link):
+
+https://www.youtube.com/watch?v=pgHcWAh9sFA&list=PLYxzS__5yYQmHbpKMARP04F344zYRX91I
+https://www.youtube.com/watch?v=oalhTCW_5D8&index=3&list=PL7sCSgsRZ-slYARh3YJIqPGZqtGVqZRGt
+https://www.youtube.com/watch?v=IdsdQuC13P0
+https://www.youtube.com/watch?v=vKlybue_yMQ
+https://www.youtube.com/watch?v=mAOxWf36YLo&index=10&list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp
+https://www.youtube.com/watch?v=UVAMha41dwo
+
+
+https://gist.github.com/mrister/bd8aca33999af081e9b21552e75d35b3
+https://github.com/amitmerchant1990/kickstart-with-nodejs-express
+https://github.com/expressjs/morgan
+
+
+https://www.tutorialspoint.com/expressjs_online_training/expressjs_basic_program.asp
+https://www.tutorialspoint.com/expressjs/expressjs_form_data.htm
+https://expressjs.com/en/guide/routing.html
+
+Important: when you going to add new resipie you shoud go in this router: http://127.0.0.1:3000/admin/recipie/add
+and for edit and delete : http://127.0.0.1:3000/admin/recipie/   
+
+==============================================================================================================================
+
